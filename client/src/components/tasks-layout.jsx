@@ -1,11 +1,11 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./common-header";
+import TasksHeader from "./tasks-header";
 
-export default function CommonLayout() {
+export default function TasksLayout() {
   return (
     <div>
-      <Header />
+      <TasksHeader />
       <div className="max-w-5xl mx-auto p-4">
         <Outlet />
       </div>
