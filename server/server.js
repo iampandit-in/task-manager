@@ -12,20 +12,12 @@ app.get("/", (req, res) => {
     res.json([
       {
         name: "Pandit",
-        age: 20
+        email: "pandit@gmail.com"
       },
       {
         name: "Rehan",
-        age: 19
-      },
-      {
-        name: "Rahul",
-        age: 20
-      },
-      {
-        name: "Ravi",
-        age: 20
-      },
+        email: "rehan@gmail.com"
+      }
     ])
 })
 
