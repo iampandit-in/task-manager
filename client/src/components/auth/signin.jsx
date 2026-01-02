@@ -22,6 +22,8 @@ import { z } from "zod";
 import { SignInUser } from "@/services/user";
 import { toast } from "sonner";
 import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { TaskManagerContext } from "@/context";
 
 const schema = z.object({
   email: z.email({
@@ -33,6 +35,7 @@ const schema = z.object({
 });
 
 export default function Signin() {
+  const { setUser } = useContext(TaskManagerContext);
   const navigate = useNavigate();
   const form = useForm({
     resolver: zodResolver(schema),
@@ -46,6 +49,7 @@ export default function Signin() {
     try {
       const response = await SignInUser(data);
       if (response.success) {
+        setUser(response.data);
         toast.success(response.message);
         form.reset();
         navigate("/");

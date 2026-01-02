@@ -20,6 +20,11 @@ const getCurrentUser = async () => {
   return response.data
 }
 
+const isUserAuthenticated = async () => {
+  const response = await axios.post("http://localhost:3000/api/user/auth-check", {withCredentials: true}) 
+  return response.data
+}
+
 const updateUser = async (formData) => {
   const response = await axios.put("http://localhost:3000/api/user/update-user", formData, {withCredentials: true}) 
   return response.data
@@ -30,4 +35,4 @@ const deleteUser = async () => {
   return response.data
 }
 
-export {SignUpUser, SignInUser, SignOutUser, getCurrentUser, updateUser, deleteUser}
+export {SignUpUser, SignInUser, SignOutUser, getCurrentUser, updateUser, deleteUser, isUserAuthenticated}

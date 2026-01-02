@@ -4,6 +4,7 @@ import connectDB from "./db/index.js"
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import userRouter from "./routes/user.js"
+import taskRouter from "./routes/task.js"
 dotenv.config()
 
 const app = express()
@@ -13,22 +14,10 @@ app.use(cookieParser())
 app.use(express.json())
 
 app.use("/api/user", userRouter)
+app.use("/api/task", taskRouter)
 
 app.get("/", (req, res) => {
-    res.json([
-      {
-        name: "Pandit",
-        email: "pandit@gmail.com"
-      },
-      {
-        name: "Rehan",
-        email: "rehan@gmail.com"
-      },
-      {
-        name: "Umesh",
-        email: "umesh@gmail.com"
-      }
-    ])
+    res.json({ success: true, message: "Welcome to Task Manager" })
 })
 
 app.listen(3000, () => {
