@@ -1,32 +1,32 @@
 import axios from "axios"
 
 const SignUpUser = async (formData) => {
-  const response = await axios.post("http://localhost:3000/api/user/signup", formData, {withCredentials: true}) 
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/signup`, formData, {withCredentials: true}) 
   return response.data
 }
 
 const SignInUser = async (formData) => {
-  const response = await axios.post("http://localhost:3000/api/user/signin", formData, {withCredentials: true}) 
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/signin`, formData, {withCredentials: true}) 
   return response.data
 }
 
 const SignOutUser = async () => {
-  const response = await axios.post("http://localhost:3000/api/user/signout", {withCredentials: true}) 
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/signout`, {withCredentials: true}) 
   return response.data
 }
 
 const getCurrentUser = async () => {
-  const response = await axios.get("http://localhost:3000/api/user/get-current-user", {withCredentials: true}) 
+  const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/user/get-current-user`, {withCredentials: true}) 
   return response.data
 }
 
 const isUserAuthenticated = async () => {
-  const response = await axios.post("http://localhost:3000/api/user/auth-check", {withCredentials: true}) 
+  const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/user/auth-check`, {}, {withCredentials: true}) 
   return response.data
 }
 
 const updateUser = async (formData) => {
-  const response = await axios.put("http://localhost:3000/api/user/update-user", formData, {withCredentials: true}) 
+  const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/user/update-user`, formData, {withCredentials: true}) 
   return response.data
 }
 
