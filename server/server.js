@@ -15,6 +15,8 @@ dotenv.config()
 
 const app = express()
 connectDB()
+app.set("trust proxy", 1);
+
 app.use(cors({
     origin: (origin, callback) => {
         const allowedOrigins = [
@@ -23,7 +25,7 @@ app.use(cors({
             "http://localhost:8081"
         ];
         // Allow requests with no origin (like mobile apps or curl requests)
-        if (!origin || allowedOrigins.includes(origin) || origin.startsWith("http://192.168.") || origin.startsWith("http://10.")) {
+        if (!origin || allowedOrigins.includes(origin) || origin.startsWith("http://192.168.") || origin.startsWith("http://10.") || origin.endsWith(".vercel.app")) {
             callback(null, true);
         } else {
             callback(new Error('Not allowed by CORS'));
