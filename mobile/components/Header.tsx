@@ -27,7 +27,7 @@ export default function Header() {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View>
-          <Text style={styles.title}>Task Manager</Text>
+          <Text style={styles.title}>Momentum</Text>
           {user && (
             <Text style={styles.greeting}>
               Hello, {user.name.split(" ")[0]}

@@ -70,7 +70,7 @@ export default function Signin() {
           className="w-full max-w-md space-y-6"
         >
           <h1 className="text-2xl font-bold text-center">
-            Sign In to Task Manager
+            Sign In to Momentum
           </h1>
           <Card>
             <CardHeader>

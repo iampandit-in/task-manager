@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="max-w-5xl mx-auto p-4 flex items-center justify-between">
       <Link to={"/"} className="text-xl">
-        Task Manager
+        Momentum
       </Link>
       {user ? (
         <nav className="flex items-center gap-2">

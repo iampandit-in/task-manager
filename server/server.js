@@ -41,7 +41,7 @@ app.use("/api/user", userRouter)
 app.use("/api/task", taskRouter)
 
 app.get("/", (req, res) => {
-    res.json({ success: true, message: "Welcome to Task Manager" })
+    res.json({ success: true, message: "Welcome to Momentum" })
 })
 
 app.listen(3000, () => {

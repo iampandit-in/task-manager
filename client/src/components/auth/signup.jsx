@@ -3,9 +3,9 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
+  CardFooter,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import {
@@ -69,8 +69,8 @@ export default function SignUp() {
           onSubmit={form.handleSubmit(handleSubmit)}
           className="w-full max-w-md space-y-6"
         >
-          <h1 className="text-center text-xl font-bold">
-            Sign Up to Task Manager
+          <h1 className="text-2xl font-bold text-center">
+            Sign Up to Momentum
           </h1>
           <Card>
             <CardHeader>
